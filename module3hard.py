@@ -10,23 +10,23 @@ data_structure = [
 def calculate_structure_sum(*args):
     sum = 0
 
-    for item in args:
-        if isinstance(item, list):
-            for element in item:
-                sum += calculate_structure_sum(element)
-        elif isinstance(item, tuple):
-            for element in item:
-                sum += calculate_structure_sum(element)
-        elif isinstance(item, set):
-            for element in item:
-                sum += calculate_structure_sum(element)
-        elif isinstance(item, dict):
-            for key, value in item.items():
+    for i in args:
+        if isinstance(i, list):
+            for e in i:
+                sum += calculate_structure_sum(e)
+        elif isinstance(i, tuple):
+            for e in i:
+                sum += calculate_structure_sum(e)
+        elif isinstance(i, set):
+            for e in i:
+                sum += calculate_structure_sum(e)
+        elif isinstance(i, dict):
+            for key, value in i.items():
                 sum += calculate_structure_sum(key, value)
-        elif isinstance(item, str):
-            sum += len(item)
-        elif isinstance(item, int):
-            sum += item
+        elif isinstance(i, str):
+            sum += len(i)
+        elif isinstance(i, int):
+            sum += i
     return sum
 
 
